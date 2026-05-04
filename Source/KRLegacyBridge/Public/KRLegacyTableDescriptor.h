@@ -11,6 +11,22 @@ enum class EKRLegacyTablePriority : uint8
 };
 
 USTRUCT(BlueprintType)
+struct KRLEGACYBRIDGE_API FKRLegacySheetExportDescriptor
+{
+    GENERATED_BODY()
+
+public:
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Legacy")
+    FString SheetName;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Legacy")
+    TArray<FString> ExportColumnNames;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Legacy")
+    FString Notes;
+};
+
+USTRUCT(BlueprintType)
 struct KRLEGACYBRIDGE_API FKRLegacyTableDescriptor
 {
     GENERATED_BODY()
@@ -30,4 +46,7 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Legacy")
     TArray<FString> ExpectedSheetNames;
+
+    UPROPERTY(EditAnywhere, BlueprintReadOnly, Category="Legacy")
+    TArray<FKRLegacySheetExportDescriptor> ExportSchemas;
 };
