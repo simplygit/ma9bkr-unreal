@@ -1,0 +1,29 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.7",
+  "Category": "Games",
+  "Description": "KR Unreal migration workspace for the Unity to Unreal transition.",
+  "Modules": [
+    {
+      "Name": "KRGameplay",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "KRCore",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    },
+    {
+      "Name": "KRLegacyBridge",
+      "Type": "Runtime",
+      "LoadingPhase": "PostDefault"
+    },
+    {
+      "Name": "KRPresentation",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ],
+  "Plugins": []
+}
