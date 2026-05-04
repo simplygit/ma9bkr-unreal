@@ -14,6 +14,19 @@ enum class EKRMatchPhase : uint8
     Final
 };
 
+UENUM(BlueprintType)
+enum class EKRPrototypeAtBatOutcome : uint8
+{
+    None,
+    StrikeOut,
+    Single,
+    Double,
+    HomeRun,
+    Walk,
+    FieldOut,
+    DoublePlay
+};
+
 USTRUCT(BlueprintType)
 struct KRGAMEPLAY_API FKRScoreLine
 {
@@ -72,4 +85,34 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
     FKRBaseOccupancy Bases;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
+    int32 TopBattingOrderIndex = 1;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
+    int32 BottomBattingOrderIndex = 1;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
+    FString CurrentBatterSlotName;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
+    FString CurrentPitcherSlotName;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
+    FString CurrentOffenseSide;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
+    FString CurrentDefenseSide;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
+    EKRPrototypeAtBatOutcome LastAtBatOutcome = EKRPrototypeAtBatOutcome::None;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
+    FString LastReplaySampleName;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
+    FString LastOutcomeSummary;
+
+    UPROPERTY(EditAnywhere, BlueprintReadWrite, Category="Match")
+    int32 PlateAppearanceCount = 0;
 };

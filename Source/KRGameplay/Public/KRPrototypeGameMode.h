@@ -12,4 +12,6 @@ class KRGAMEPLAY_API AKRPrototypeGameMode : public AGameModeBase
 
 public:
     AKRPrototypeGameMode();
+
+    virtual void StartPlay() override;
 };
